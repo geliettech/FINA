@@ -12,7 +12,7 @@ A modern finance management application that helps users track income, expenses,
 * Firebase Storage (Avatar uploads)
 * React Router (Navigation)
 * Chart Library (Recharts / Chart.js)
-* Context API / Redux (State Management)
+* Context API (State Management)
 
 ---
 
@@ -26,6 +26,7 @@ Users create an account with:
 * Email
 * Password
 
+Sign Up with Google
 ### Firebase
 
 * `createUserWithEmailAndPassword`
@@ -38,6 +39,8 @@ Users create an account with:
 * Email
 * Password
 
+
+Sign In with Google
 ### Firebase
 
 * `signInWithEmailAndPassword`
