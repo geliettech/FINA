@@ -18,6 +18,16 @@ A modern SaaS finance management application that helps users track income, expe
 * Jest (testing)
 
 ---
+# ⚡ Performance & Engineering Improvements
+
+* Pagination for transactions
+* Lazy-loaded dashboard modules
+* Memoization (useMemo, React.memo)
+* Debounced search
+* Skeleton loaders
+* Empty states
+
+---
 
 # 🏠 App Structure
 
@@ -239,51 +249,38 @@ After login or email verification → `/dashboard`
 ---
 
 ## 🆓 Free Plan
-* Transactions
-* Budgets
-* 4 currencies
-* monthly analytics
+* 20 Transactions creation
+* 8 Budgets creation 
+* 2 currencies suport
+* 4 recurring/month
+* 90 days analytics support
 * 1 report export/month
-* unlimited financial insights
+* 3 finance prediction/month
 
 ---
 
 ## ⭐ Pro Plan
-
-* Unlimited ai financial insights
-* 8 currencies
-* 4 report exports/month
-* Category trends
-* Spending predictions
-* Monthly comparisons
+* 120 Transactions creation
+* 20 Budgets creation 
+* 3 currencies suport
+* 8 recurring/month
+* 366 days analytics support
+* 4 report export/month
+* 8 finance prediction/mont
 
 ---
 
 ## 👑 Premium Plan
 
-* Everything in Pro
-* Unlimited currencies
-* Unlimited exports
-* Recurring transactions
-* Automation features
-* Yearly analytics
-* Advanced predictions
+* unlimited Transactions creation
+* unlimited Budgets creation 
+* 8 currencies suport
+* unlimited recurring support
+* unlimited days analytics support
+* unlimited report export
+* unlimited finance prediction/mont
 
 ---
-
-
-
-# ⚡ Performance & Engineering Improvements
-
-* Pagination for transactions
-* Lazy-loaded dashboard modules
-* Memoization (useMemo, React.memo)
-* Debounced search
-* Skeleton loaders
-* Empty states
-
----
-
 # 🧪 Testing
 
 *
