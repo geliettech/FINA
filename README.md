@@ -13,7 +13,7 @@ A modern SaaS finance management application that helps users track income, expe
 * React Router (Navigation)
 * Recharts / Chart.js (Data visualization)
 * Context API / Zustand (State management)
-* Firebase Security Rules (secure database)
+* Firebase Security Rules (authorization)
 * OpenAI API (Financial Insights Engine)
 * Jest (testing)
 
@@ -22,15 +22,28 @@ A modern SaaS finance management application that helps users track income, expe
 # 🏠 App Structure
 
 ```
-/landing
-/auth
-/dashboard
+/app-|/auth
+     |/dashboard
+     |page.jsx(landing page)
 ```
 ---
 
-# 🔐 Authentication Flow
+# App Workflow 
+## 🌐 Landing Page Flow
 
-## 1. Register
+### Sections
+
+* Hero Section (Link- Features, pricing, Login,sigin
+* Features Overview
+* How it works
+* Pricing Plans
+* CTA (Get Started / Login)
+* Footer
+
+---
+## 🔐 Authentication Flow
+
+### 1. Register
 
 Users create an account with:
 
@@ -82,18 +95,7 @@ Users create an account with:
 
 ---
 
-# 🌐 Landing Page Flow
 
-### Sections
-
-* Hero Section
-* Features Overview
-* How it works
-* Pricing Plans
-* CTA (Get Started / Login)
-* Footer
-
----
 
 # 📊 Dashboard Flow
 
