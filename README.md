@@ -15,14 +15,14 @@ A modern SaaS finance management application that helps users track income, expe
 * Context API / Zustand (State management)
 * Firebase Security Rules (authorization)
 * OpenAI API (Financial Insights Engine)
-* Jest (testing)
-
+* GitHub action cl/cd pipeline
+* pwa support
+* Jest (unit testing)
 ---
 # ⚡ Performance & Engineering
 
 * Lazy-loaded modules
-* optimization
-* Memoization (useMemo, React.memo)
+* optimization & Memoization (use callback, useMemo, React.memo)
 * Debounced search
 * Skeleton loaders
 * Empty states
@@ -37,7 +37,12 @@ A modern SaaS finance management application that helps users track income, expe
      |page.jsx(landing page)
 ```
 ---
-
+# GitHub action cl/cd pipeline
+* Integrate CI/CD
+---
+# pwa support
+* Integrate pwa
+---
 # App Workflow 
 ## 🌐 Landing Page Flow
 * Hero Section(including header- logo, features, pricing, FAQ, Login, Start for free)
@@ -129,6 +134,8 @@ After login or email verification → `/dashboard`
 * Profile dropdown (avatar + name)
 
 ---
+### AI-assistant
+* chat with ai on financial assistant and your analytics 
 
 # 📈 Dashboard Modules
 
@@ -182,15 +189,9 @@ After login or email verification → `/dashboard`
 
 ### Features
 
-* Add recurring transaction
-* Active recurring(Date, Description, category, type, Amount, Actions(pause/on, delete, rename))
+* Add upcoming recurring transaction
+* Active recurring(Date, Description, category, type, Amount, frequecy, Actions(pause/on, delete, rename))
 * Upcoming(Date, Description, category, type, Amount, frequency, Actions(pause/on, delete, rename))
-
-### Examples
-
-* Salary (Monthly)
-* Rent (Monthly)
-* Netflix (Monthly)
 
 ---
 
@@ -205,7 +206,7 @@ After login or email verification → `/dashboard`
 * savings growth
 * Investment growth
 * budget and unusual alerts
-* Predictions (Pro/Premium)
+* Predictions
 
 ---
 
@@ -214,7 +215,7 @@ After login or email verification → `/dashboard`
 ### Features
 * Filter monthly, Quarterly or yearly.
 *Monthly reports (free), Quarterly reports(pro), Yearly reports (Premium)*
-* export format drop-down (pdf, excel, cvs)
+* export format drop-down (pdf, excel, CSV)
 * Export button
 *Free: 1 export/month, Pro: 4 exports/month, Premium: Unlimited*
 
@@ -277,12 +278,9 @@ After login or email verification → `/dashboard`
 * unlimited finance prediction/mont
 
 ---
-# 🧪 Testing
+# 🧪 Unit Testing
 
 *
-
-Tools:
-
-* Jest - React Testing Library
+*
 
 ---
