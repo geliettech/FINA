@@ -30,14 +30,11 @@ A modern SaaS finance management application that helps users track income, expe
 
 # App Workflow 
 ## 🌐 Landing Page Flow
-
-### Sections
-
-* Hero Section (Link- Features, pricing, Login,sigin
+* Hero Section(including header- logo, features, pricing, FAQ, Login, Start for free)
 * Features Overview
-* How it works
 * Pricing Plans
-* CTA (Get Started / Login)
+* FAQ
+* CTA
 * Footer
 
 ---
@@ -47,15 +44,9 @@ A modern SaaS finance management application that helps users track income, expe
 
 Users create an account with:
 
-* Full Name
-* Email
-* Password
-
-### Features
-
-* Email/password signup
-* Google OAuth signup
-* Email verification
+* Full Name/Email/Password/Confirm password
+*Google
+* verify email popup
 
 ### Firebase Methods
 
@@ -73,6 +64,7 @@ Users create an account with:
 ### Firebase Methods
 
 * `signInWithEmailAndPassword`
+* signInWithPopup(Google)
 
 ---
 
@@ -80,7 +72,8 @@ Users create an account with:
 
 * Email input
 * Reset link sent via Firebase
-
+* change password
+* confirm change password 
 ### Firebase Method
 
 * `sendPasswordResetEmail`
@@ -89,7 +82,7 @@ Users create an account with:
 
 ## 4. Auth Guard
 
-* Protect `/dashboard`
+* Protect `/dashboard and email verification`
 * Redirect unauthenticated users to `/auth`
 * Persist session on refresh
 
@@ -99,7 +92,7 @@ Users create an account with:
 
 # 📊 Dashboard Flow
 
-After login → `/dashboard`
+After login or email verification → `/dashboard`
 
 ---
 
