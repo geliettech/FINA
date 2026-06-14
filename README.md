@@ -1,4 +1,4 @@
-# Finance Management App (React + Firebase)
+# PENDA - Finance Management App
 
 A modern SaaS finance management application that helps users track income, expenses, savings, investments, and budgets with smart analytics, financial insights, and subscription-based features.
 
@@ -7,15 +7,25 @@ A modern SaaS finance management application that helps users track income, expe
 # 🚀 Tech Stack
 
 * React (Frontend)
-* Firebase Authentication (Auth)
+* Firebase Authentication /React-hook-form / zod / Sonner (Auth & validation)
 * Firestore (Database)
 * Firebase Storage (Avatar uploads)
 * React Router (Navigation)
 * Recharts / Chart.js (Data visualization)
 * Context API / Zustand (State management)
 * Firebase Security Rules
-* Optional: OpenAI API (Financial Insights Engine)
+* OpenAI API (Financial Insights Engine)
+* Jest (testing)
 
+---
+
+# 🏠 App Structure
+
+```
+/landing
+/auth
+/dashboard
+```
 ---
 
 # 🔐 Authentication Flow
@@ -32,7 +42,7 @@ Users create an account with:
 
 * Email/password signup
 * Google OAuth signup
-* Email verification (recommended)
+* Email verification
 
 ### Firebase Methods
 
@@ -70,16 +80,6 @@ Users create an account with:
 * Protect `/dashboard`
 * Redirect unauthenticated users to `/auth`
 * Persist session on refresh
-
----
-
-# 🏠 App Structure
-
-```
-/landing
-/auth
-/dashboard
-```
 
 ---
 
@@ -291,35 +291,7 @@ After login → `/dashboard`
 ### Security
 
 * Change password
-* Logout all devices (recommended)
-
----
-
-# 🧠 Financial Insights System (AI Feature)
-
-## Free Plan
-
-* Limited insights
-
-## Pro Plan
-
-* Unlimited insights
-
-## Premium Plan
-
-* Advanced personalized recommendations
-
-### Example prompts
-
-* “How can I reduce expenses?”
-* “Can I afford ₦100,000 purchase?”
-* “Why is my spending increasing?”
-
-### Guardrails
-
-* Rate limiting
-* Prompt templates
-* Data-bound responses (based on user transactions only)
+* Logout all devices
 
 ---
 
@@ -334,13 +306,13 @@ After login → `/dashboard`
 * Budgets
 * 4 currencies
 * 1 report export/month
-* Limited financial insights
+* Limited ai financial insights
 
 ---
 
 ## ⭐ Pro Plan
 
-* Unlimited financial insights
+* Unlimited ai financial insights
 * 8 currencies
 * 4 report exports/month
 * Category trends
@@ -361,103 +333,7 @@ After login → `/dashboard`
 
 ---
 
-# ⚙️ Firebase Architecture (Improved)
 
-## Users Collection
-
-```
-users/{userId}
-```
-
-```json
-{
-  "name": "OGE",
-  "email": "user@email.com",
-  "plan": "pro",
-  "currency": "NGN",
-  "createdAt": "timestamp"
-}
-```
-
----
-
-## Flat Collections (Scalable Structure)
-
-### Transactions
-
-```
-transactions/{transactionId}
-```
-
-### Budgets
-
-```
-budgets/{budgetId}
-```
-
-### Recurring (Premium)
-
-```
-recurring/{recurringId}
-```
-
-Each document includes:
-
-```json
-{
-  "userId": "abc123"
-}
-```
-
----
-
-# 🔐 Firebase Security Rules (Critical)
-
-```js
-rules_version = '2';
-service cloud.firestore {
-  match /databases/{database}/documents {
-
-    match /transactions/{id} {
-      allow read, write: if request.auth != null
-      && request.auth.uid == resource.data.userId;
-    }
-
-    match /budgets/{id} {
-      allow read, write: if request.auth != null
-      && request.auth.uid == resource.data.userId;
-    }
-
-    match /recurring/{id} {
-      allow read, write: if request.auth != null
-      && request.auth.uid == resource.data.userId;
-    }
-
-    match /users/{id} {
-      allow read, write: if request.auth != null
-      && request.auth.uid == id;
-    }
-  }
-}
-```
-
----
-
-# 🧠 Subscription Control Logic
-
-```ts
-function canAccessFeature(plan, feature) {
-  const access = {
-    free: ["transactions", "budgets", "basic_reports"],
-    pro: ["analytics", "predictions", "exports"],
-    premium: ["recurring", "automation", "full_reports"]
-  };
-
-  return access[plan]?.includes(feature);
-}
-```
-
----
 
 # ⚡ Performance & Engineering Improvements
 
@@ -470,59 +346,12 @@ function canAccessFeature(plan, feature) {
 
 ---
 
-# 🧪 Recommended Testing
+# 🧪 Testing
 
-* Auth flow tests
-* Transaction CRUD tests
-* Budget calculation tests
-* Role-based access tests
+*
 
 Tools:
 
-* Jest
-* React Testing Library
-
----
-
-# 🧱 Recommended Folder Structure
-
-```bash
-src/
-  features/
-    auth/
-    transactions/
-    budgets/
-    analytics/
-    reports/
-  components/
-  pages/
-  hooks/
-  context/
-  services/
-    firebase/
-    ai/
-  utils/
-  routes/
-```
-
----
-
-# 🚀 Final App Flow Summary
-
-1. User lands on Landing Page
-2. User signs up / logs in (Firebase Auth)
-3. Email verification (optional but recommended)
-4. Redirect to Dashboard
-5. User manages:
-
-   * Transactions
-   * Budgets
-   * Analytics
-   * Reports
-6. Plan controls feature access:
-
-   * Free → basic tracking
-   * Pro → insights + predictions
-   * Premium → automation + recurring + full analytics
+* Jest - React Testing Library
 
 ---
