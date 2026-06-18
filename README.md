@@ -157,8 +157,6 @@ Start Managing Your Finances Today
 
 ## Footer
 
-- About
-- Contact
 - Privacy Policy
 - Terms & Conditions
 - Social Links

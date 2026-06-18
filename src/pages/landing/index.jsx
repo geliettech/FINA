@@ -14,9 +14,9 @@ const LandingPage = () => {
         <div className="auth-card">
             * Hero Section
             * Features Overview
-            * How it works
             * Pricing Plans
-            * CTA (Get Started / Login)
+            *  faq
+            * CTA 
             * Footer
             <p>Sign In With Google to Continue</p>
             <button className="google-btn" onClick={handleGetStarted}>
