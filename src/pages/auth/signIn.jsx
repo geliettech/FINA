@@ -37,6 +37,7 @@ const SignIn = () => {
             const authInfo = {
                 userID: result.user.uid,
                 email: result.user.email,
+                password: result.user.password,
                 isAuth: true
             }
             localStorage.setItem("auth", JSON.stringify(authInfo));
@@ -45,6 +46,7 @@ const SignIn = () => {
             console.error(err);
         }
     };
+
 
     // Sign In with Google
     const signInWithGoogle = async () => {

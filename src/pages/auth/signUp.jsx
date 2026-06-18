@@ -35,7 +35,7 @@ const SignUp = () => {
 
 
 
-    // Sign Up / Sign In with Google
+    // Sign In with Google
     const signInWithGoogle = async () => {
         const results = await signInWithPopup(auth, googleProvider)
         const authInfo = {
@@ -48,17 +48,18 @@ const SignUp = () => {
         navigate("/dashboard")
     };
 
-        // Register
+      // Sign Up
     const register = async () => {
         try {
             const result = await createUserWithEmailAndPassword(auth, registerEmail, registerPassword);
             const authInfo = {
                 userID: result.user.uid,
                 email: result.user.email,
+                password: result.user.password,
                 isAuth: true
             }
             localStorage.setItem("auth", JSON.stringify(authInfo));
-            navigate("/dashboard");
+            navigate("/sign-in");
         } catch (err) {
             console.error(err);
         }
@@ -66,7 +67,7 @@ const SignUp = () => {
 
 
     if (isAuth) {
-        return <Navigate to="/dashboard" />
+        return <Navigate to="/sign-in" />
     }
 
     return (
