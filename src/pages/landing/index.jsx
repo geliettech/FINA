@@ -28,10 +28,11 @@ const LandingPage = () => {
                     <p className="mt-2">
                         This card changes automatically when the theme is toggled.
                     </p>
-                </div>
-                <button className="text-3xl font-bold underline" onClick={handleGetStarted}>
+                     <button className="text-3xl font-bold underline" onClick={handleGetStarted}>
                     Get Started
                 </button>
+                </div>
+               
             </div>
             <div>
                 * Features Overview
