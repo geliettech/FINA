@@ -13,15 +13,14 @@ const LandingPage = () => {
     return (
         <div className="auth-card">
             * Hero Section
+            <button className="google-btn" onClick={handleGetStarted}>
+                Get Started
+            </button>
             * Features Overview
             * Pricing Plans
             *  faq
             * CTA
             * Footer
-            <p>Sign In With Google to Continue</p>
-            <button className="google-btn" onClick={handleGetStarted}>
-                Get Started
-            </button>
         </div>
     );
 };
