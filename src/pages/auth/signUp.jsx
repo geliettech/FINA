@@ -2,12 +2,12 @@ import { useState } from "react";
 import { auth, googleProvider } from "../../config/firebase";
 import { Link, Navigate, useNavigate } from "react-router";
 import { useGetUserInfo } from "../../hooks/useGetUserInfo";
-import { useAuth } from "../../Layout/AuthProvider";
-
+import { useAuth } from "../../layout/context/authProvider";
 import {
   createUserWithEmailAndPassword,
   signInWithPopup,
 } from "firebase/auth";
+
 
 const SignUp = () => {
   const navigate = useNavigate();
@@ -15,8 +15,7 @@ const SignUp = () => {
   const authContext = useAuth();
 
   const [registerEmail, setRegisterEmail] = useState("");
-  const [registerPassword, setRegisterPassword] =
-    useState("");
+  const [registerPassword, setRegisterPassword] = useState("");
   const [emailError, setEmailError] = useState("");
   const [passwordError, setPasswordError] = useState("");
   const [generalError, setGeneralError] = useState("");

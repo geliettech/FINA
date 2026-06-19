@@ -1,19 +1,15 @@
 import { createContext, useContext, useState } from "react";
 import { useNavigate } from "react-router";
 import { signOut } from "firebase/auth"
-import { auth } from "../config/firebase"
-
+import { auth } from "../../config/firebase"
 
 
 const AuthContext = createContext(null);
 
 export const AuthProvider = ({ children }) => {
   const storedUser = JSON.parse(localStorage.getItem("auth") || "null");
-
   const [user, setUser] = useState(storedUser);
-
   const navigate = useNavigate();
-
 
 
   const login = (userData) => {
@@ -27,7 +23,6 @@ export const AuthProvider = ({ children }) => {
       setUser(null);
       navigate("/");
       localStorage.clear();
-      // localStorage.removeItem("auth");
     } catch (err) {
       console.error(err);
     }

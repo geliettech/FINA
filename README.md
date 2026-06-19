@@ -66,8 +66,6 @@ A modern SaaS finance management application that helps users track income, expe
 
 ```txt
 src/
-├── app/
-├── routes/
 ├── pages/
 │   ├── landing/
 │   ├── auth/
@@ -78,12 +76,9 @@ src/
 │   ├── forms/
 │   └── layout/
 ├── hooks/
-├── services/
-├── store/
-├── context/
-├── schemas/
+├── config/
+├── layout/
 ├── utils/
-├── firebase/
 ├── assets/
 └── tests/
 ```

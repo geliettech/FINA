@@ -2,7 +2,7 @@ import { useState } from "react";
 import { auth, googleProvider } from "../../config/firebase";
 import { Link, Navigate, useNavigate } from "react-router";
 import { useGetUserInfo } from "../../hooks/useGetUserInfo";
-import { useAuth } from "../../Layout/AuthProvider";
+import { useAuth } from "../../layout/context/authProvider";
 
 import {
   signInWithEmailAndPassword,
