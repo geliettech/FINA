@@ -4,23 +4,33 @@ const LandingPage = () => {
 
     const navigate = useNavigate();
 
-
-    // Sign In with Google
     const handleGetStarted = () => {
         navigate("/sign-in")
     };
 
     return (
         <div className="auth-card">
-            * Hero Section
-            <button className="google-btn" onClick={handleGetStarted}>
-                Get Started
-            </button>
-            * Features Overview
-            * Pricing Plans
-            *  faq
-            * CTA
-            * Footer
+            <div>
+                * Hero Section
+                <button className="text-3xl font-bold underline" onClick={handleGetStarted}>
+                    Get Started
+                </button>
+            </div>
+            <div>
+                * Features Overview
+            </div>
+            <div>
+                * Pricing Plans
+            </div>
+            <div>
+                *  faq
+            </div>
+            <div>
+                * CTA
+            </div>
+            <div>
+                * Footer
+            </div>
         </div>
     );
 };
