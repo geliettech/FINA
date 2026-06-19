@@ -23,16 +23,16 @@ const LandingPage = () => {
                 </button>
                 <div className="card mt-6">
                     <h1 className="text-2xl font-bold">
-                       * Hero Section
+                        * Hero Section
                     </h1>
                     <p className="mt-2">
                         This card changes automatically when the theme is toggled.
                     </p>
-                     <button className="text-3xl font-bold underline" onClick={handleGetStarted}>
-                    Get Started
-                </button>
+                    <button className="text-3xl font-bold underline" onClick={handleGetStarted}>
+                        Get Started
+                    </button>
                 </div>
-               
+
             </div>
             <div>
                 * Features Overview
