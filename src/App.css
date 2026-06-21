@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 @import "tailwindcss";
 
 /* Enable dark variant in Tailwind v4 */
@@ -9,35 +9,41 @@
 ========================= */
 
 :root {
-  --background: rgba(233, 238, 240, 1);
-  --foreground: rgba(14, 37, 79, 1);
-  --card: rgba(248, 250, 252, 1);
-  --border: rgba(229, 231, 235, 1);
+  --background: var(--color-gray);
+  --foreground: var(--color-p4);
+
+  --card: var(--color-white);
+  --border: var(--color-neutral);
 }
 
 .dark {
-  --background: rgba(14, 37, 79, 1);
-  --foreground: rgba(233, 238, 240, 1);
-  --card: rgba(30, 41, 59, 1);
-  --border: rgba(51, 65, 85, 1);
+  --background: var(--color-p4);
+  --foreground: var(--color-gray);
+
+  --card: var(--color-p3);
+  --border: var(--color-s4);
 }
 
 /* =========================
    Theme Tokens
 ========================= */
-
 @theme {
-  /* Blue */
-  --color-blue-100: rgba(56, 118, 139, 1);
-  --color-blue-300: rgba(26, 92, 138, 1);
-  --color-blue-600: rgba(21, 80, 137, 1);
-  --color-blue-800: rgba(14, 37, 79, 1);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-border: var(--border);
 
-  /* Green */
-  --color-green-50: rgba(97, 197, 142, 1);
-  --color-green-300: rgba(87, 182, 145, 1);
-  --color-green-600: rgba(67, 166, 145, 1);
-  --color-green-800: rgba(48, 149, 148, 1);
+  /* Primary - Blue */
+  --color-p1: rgba(56, 118, 139, 1);
+  --color-p2: rgba(26, 92, 138, 1);
+  --color-p3: rgba(21, 80, 137, 1);
+  --color-p4: rgba(14, 37, 79, 1);
+
+  /* Secondary - Green */
+  --color-s1: rgba(97, 197, 142, 1);
+  --color-s2: rgba(87, 182, 145, 1);
+  --color-s3: rgba(67, 166, 145, 1);
+  --color-s4: rgba(48, 149, 148, 1);
 
   /* Neutral */
   --color-white: rgba(255, 255, 255, 1);
@@ -51,7 +57,8 @@
   --color-warning: rgba(250, 234, 4, 1);
   --color-neutral: rgba(134, 134, 134, 1);
 
-  /* Typography */
+  /* Fonts */
+  --font-poppins: "Poppins", sans-serif;
   --font-inter: "Inter", sans-serif;
 }
 
@@ -71,16 +78,22 @@
   }
 
   body {
-    font-family: var(--font-inter);
     margin: 0;
     padding: 0;
 
-    background-color: var(--background);
-    color: var(--foreground);
-
-    transition:
-      background-color 0.3s ease,
-      color 0.3s ease;
+    @apply font-poppins text-[16px] text-foreground tracking-[-0.03em] bg-background;
+  }
+  a {
+    @apply no-underline;
+  }
+  img {
+    @apply block max-w-full;
+  }
+  button {
+    @apply tracking-[-0.03em] bg-transparent;
+  }
+  input {
+    @apply tracking-[-0.03em];
   }
 }
 
@@ -89,17 +102,31 @@
 ========================= */
 
 @layer components {
-  .side-bar {
-    background-color: var(--sidebar-bg);
-    color: var(--sidebar-text);
-
-    @apply px-4 py-6 transition-colors duration-300;
+  .card {
+    @apply rounded-xl p-4 transition-colors duration-300 bg-card border border-border;
+  }
+}
+/* =========================
+   utilities 
+========================= */
+@layer utilities {
+  .h-num {
+    @apply font-inter text-[72px] font-bold leading-21;
   }
 
-  .card {
-    background-color: var(--card);
-    border: 1px solid var(--border);
-
-    @apply rounded-xl p-4 transition-colors duration-300;
+  .h1 {
+    @apply text-[84px] font-bold leading-21 tracking-[-0.03em];
+  }
+  .h2 {
+    @apply text-[64px] font-bold leading-16;
+  }
+  .h3 {
+    @apply text-[48px] font-semibold leading-14 tracking-[-0.02em];
+  }
+  .h4 {
+    @apply text-[40px] font-semibold leading-13;
+  }
+  .h5 {
+    @apply text-[32px] font-semibold leading-10;
   }
 }
