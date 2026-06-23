@@ -18,11 +18,11 @@ export default function Header() {
         {/* Logo */}
         <Link to="/" className="shrink-0">
           <img
-            src={
-              theme === "light"
-                ? "/images/fina-light.png"
-                : "/images/fina-dark.png"
-            }
+                          src={
+                theme === "light"
+                  ? "/images/fina-light.png"
+                  : "/images/fina-dark.png"
+              }
             alt="Fina Logo"
             width={115} height={55}
           />
@@ -57,9 +57,9 @@ export default function Header() {
             ))}
           </ul>
         </nav>
-
+        
         {/* Right Side */}
-        <div className={clsx(open ? "flex flex-col lg:flex-row" : "hidden", "ml-auto items-center gap-4")}>
+        <div className={clsx(open ? "flex" : "hidden lg:flex","ml-auto items-center gap-4")}>
           <button onClick={() => navigate("/sign-in")} className="btn-secondary">
             Sign In
           </button>
@@ -75,7 +75,7 @@ export default function Header() {
           className="ml-auto lg:hidden flex items-center justify-center w-10 h-10 rounded-full border border-border"
           aria-label="Toggle navigation"
         >
-          <img
+                   <img
             src={`/images/${open ? "close" : "magic"}.svg`}
             alt=""
             className="w-5 h-5"
