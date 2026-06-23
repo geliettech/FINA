@@ -13,16 +13,17 @@ export default function Header() {
   const navigate = useNavigate();
 
   return (
-    <header className="fixed inset-x-0 top-0 z-50 bg-background border-b border-border lg:border-0">
-      <div className="container relative flex h-20 items-center">
+    <header className="fixed w-full top-0 z-50 bg-background border-b border-border lg:border-0">
+      {/* <div className="container relative flex h-20 items-center"> */}
+      <div className="container flex flex-row lg:items-center lg:h-20">
         {/* Logo */}
         <Link to="/" className="shrink-0">
           <img
-                          src={
-                theme === "light"
-                  ? "/images/fina-light.png"
-                  : "/images/fina-dark.png"
-              }
+            src={
+              theme === "light"
+                ? "/images/fina-light.png"
+                : "/images/fina-dark.png"
+            }
             alt="Fina Logo"
             width={115} height={55}
           />
@@ -31,21 +32,11 @@ export default function Header() {
         {/* Navigation */}
         <nav
           className={clsx(
-            // Mobile
-            "absolute left-0 top-full w-full bg-background border-b border-border transition-all duration-300 lg:static lg:w-auto lg:border-0 lg:bg-transparent",
-
-            // Desktop
-            "lg:static lg:ml-10 lg:w-auto lg:border-0 lg:bg-transparent",
-
+            "w-full lg:w-auto lg:ml-10 transition-all duration-300",
             open ? "block" : "hidden lg:block"
           )}
         >
-          <ul
-            className={clsx(
-              "flex flex-col items-center gap-6 py-6",
-              "lg:flex-row lg:gap-8 lg:py-0"
-            )}
-          >
+          <ul className="flex flex-col items-center gap-6 py-6 lg:flex-row lg:gap-8 lg:py-0">
             {NAV_ITEMS.map((item) => (
               <li key={item}>
                 <LinkScroll
@@ -57,9 +48,9 @@ export default function Header() {
             ))}
           </ul>
         </nav>
-        
+
         {/* Right Side */}
-        <div className={clsx(open ? "flex" : "hidden lg:flex","ml-auto items-center gap-4")}>
+        <div className={clsx(open ? "flex" : "hidden lg:flex", "ml-auto items-center gap-4")}>
           <button onClick={() => navigate("/sign-in")} className="btn-secondary">
             Sign In
           </button>
@@ -75,7 +66,7 @@ export default function Header() {
           className="ml-auto lg:hidden flex items-center justify-center w-10 h-10 rounded-full border border-border"
           aria-label="Toggle navigation"
         >
-                   <img
+          <img
             src={`/images/${open ? "close" : "magic"}.svg`}
             alt=""
             className="w-5 h-5"
