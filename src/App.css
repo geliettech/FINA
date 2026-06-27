@@ -57,7 +57,7 @@
 
   --card: var(--color-gray);
   --border: var(--color-neutral);
-  --btn: var(--color-s1);
+  --btn: var(--color-s3);
 }
 
 .dark {
@@ -66,7 +66,7 @@
 
   --card: var(--color-p3);
   --border: var(--color-s4);
-  --btn: var(--color-s4);
+  --btn: var(--color-s3);
 }
 
 /* =========================
@@ -219,7 +219,7 @@
   }
   
   .btn-primary {
-    @apply font-medium bg-btn text-white hover:bg-card/60 px-4 py-2 rounded-full transform transition-transform duration-300 hover:scale-105 cursor-pointer;
+    @apply font-medium bg-btn text-white hover:bg-btn/60 px-4 py-2 rounded-full transform transition-transform duration-300 hover:scale-105 cursor-pointer;
   }
 }
 
