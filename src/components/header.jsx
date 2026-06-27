@@ -1,88 +1,18 @@
-// import { useState } from "react";
-// import { Link, useNavigate } from "react-router";
-// import { Link as LinkScroll } from "react-scroll";
-// import clsx from "clsx";
-// import { useTheme } from "../layout/context/themeProvider";
-
-
-// const NAV_ITEMS = ["Features", "Pricing", "FAQ", "Download"];
-
-// export default function Header() {
-//   const [open, setOpen] = useState(false);
-//   const { theme } = useTheme();
-//   const navigate = useNavigate();
-
-//   return (
-//     <header className="fixed w-full top-0 z-50 bg-background border-b border-border lg:border-0">
-//       {/* <div className="container relative flex h-20 items-center"> */}
-//       <div className="container flex flex-row lg:items-center lg:h-20">
-//         {/* Logo */}
-//         <Link to="/" className="shrink-0">
-//           <img
-//             src={
-//               theme === "light"
-//                 ? "/images/fina-light.png"
-//                 : "/images/fina-dark.png"
-//             }
-//             alt="Fina Logo"
-//             width={115} height={55}
-//           />
-//         </Link>
-
-//         {/* Navigation */}
-//         <nav
-//           className={clsx(
-//             "w-full lg:w-auto lg:ml-10 transition-all duration-300",
-//             open ? "block" : "hidden lg:block"
-//           )}
-//         >
-//           <ul className="flex flex-col items-center gap-6 py-6 lg:flex-row lg:gap-8 lg:py-0">
-//             {NAV_ITEMS.map((item) => (
-//               <li key={item}>
-//                 <LinkScroll
-//                   className="text-foreground transition-colors duration-500 cursor-pointer hover:text-s1"
-//                 >
-//                   {item}
-//                 </LinkScroll>
-//               </li>
-//             ))}
-//           </ul>
-//         </nav>
-
-//         {/* Right Side */}
-//         <div className={clsx(open ? "flex" : "hidden lg:flex", "ml-auto items-center gap-4")}>
-//           <button onClick={() => navigate("/sign-in")} className="btn-secondary">
-//             Sign In
-//           </button>
-
-//           <button onClick={() => navigate("/sign-up")} className="btn-primary">
-//             Start for Free
-//           </button>
-//         </div>
-
-//         {/* Hamburger */}
-//         <button
-//           onClick={() => setOpen(!open)}
-//           className="ml-auto lg:hidden flex items-center justify-center w-10 h-10 rounded-full border border-border"
-//           aria-label="Toggle navigation"
-//         >
-//           <img
-//             src={`/images/${open ? "close" : "magic"}.svg`}
-//             alt=""
-//             className="w-5 h-5"
-//           />
-//         </button>
-//       </div>
-//     </header>
-//   );
-// }
 import { Link as LinkScroll } from "react-scroll";
 import { useEffect, useState } from "react";
 import clsx from "clsx";
+import { Link, useNavigate } from "react-router";
+import { useTheme } from "../layout/context/themeProvider";
+
 
 const Header = () => {
-  const [hasScrolled, setHasScrolled] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
+  const [hasScrolled, setHasScrolled] = useState(false);
+
+  const { theme } = useTheme();
+  const navigate = useNavigate();
+
+  const NAV_ITEMS = ["Features", "Pricing", "FAQ", "Download"];
 
   useEffect(() => {
     const handleScroll = () => {
@@ -96,93 +26,86 @@ const Header = () => {
     };
   }, []);
 
-  const NavLink = ({ title }) => (
-    <LinkScroll
-      onClick={() => setIsOpen(false)}
-      to={title}
-      offset={-100}
-      spy
-      smooth
-      activeClass="nav-active"
-      className="base-bold text-p4 uppercase transition-colors duration-500 cursor-pointer hover:text-p1 max-lg:my-4 max-lg:h5"
-    >
-      {title}
-    </LinkScroll>
-  );
 
   return (
-    <header
-      className={clsx(
-        "fixed top-0 left-0 z-50 w-full py-10 transition-all duration-500 max-lg:py-4",
-        hasScrolled && "py-2 bg-black-100 backdrop-blur-sm",
-      )}
-    >
-      <div className="container flex h-14 items-center max-lg:px-5">
-        <a className="lg:hidden flex-1 cursor-pointer z-2">
-          <img src="/images/xora.svg" width={115} height={55} alt="logo" />
-        </a>
+    <header className={clsx("fixed top-0 left-0 w-full z-50 text-foreground transition-all duration-500 py-10 max-lg:py-4", hasScrolled
+          ? "py-2 bg-background/70 backdrop-blur-md shadow-sm"
+          : "bg-transparent")}>
+        <div className="container flex items-center justify-between h-18">
+        {/* logo */}
+        <Link to="/" className="cursor-pointer z-2">
+          <img src={
+            theme === "light"
+              ? "/images/fina-light.png"
+              : "/images/fina-dark.png"
+          } width={160} height={55} alt="logo" />
+        </Link>
+         <div className={clsx("w-full max-lg:absolute max-lg:top-full max-lg:left-5 max-lg:right-5 max-lg:bg-background max-lg:shadow-lg max-lg:overflow-hidden transition-all duration-300 max-lg:bg-s2",
+         isOpen ? "max-lg:max-h-[600px] max-lg:opacity-100 max-lg:translate-y-0" : "max-lg:max-h-0 max-lg:opacity-0 pointer-events-none max-lg:-translate-y-5",)}>
+   
+    <div className="relative
+    flex
+    items-center
+    justify-between
+    w-full
 
-        <div
-          className={clsx(
-            "w-full max-lg:fixed max-lg:top-0 max-lg:left-0 max-lg:w-full max-lg:bg-s2 max-lg:opacity-0",
-            isOpen ? "max-lg:opacity-100" : "max-lg:pointer-events-none",
-          )}
-        >
-          <div className="max-lg:relative max-lg:flex max-lg:flex-col max-lg:min-h-screen max-lg:p-6 max-lg:overflow-hidden sidebar-before max-md:px-4">
-            <nav className="max-lg:relative max-lg:z-2 max-lg:my-auto">
-              <ul className="flex max-lg:block max-lg:px-12">
-                <li className="nav-li">
-                  <NavLink title="features" />
-                  <div className="dot" />
-                  <NavLink title="pricing" />
-                </li>
-
-                <li className="nav-logo">
+    max-lg:flex-col
+    max-lg:items-center
+    max-lg:justify-center
+    max-lg:py-10
+    max-lg:gap-2">
+          {/* navigation */}
+          <nav className="max-lg:relative max-lg:z-2 max-lg:my-auto">
+            <ul className="flex max-lg:block max-lg:gap-6 gap-12">
+              {NAV_ITEMS.map((title) => (
+                <li key={title} className="nav-li">
                   <LinkScroll
-                    to="hero"
-                    offset={-250}
+                    onClick={() => setIsOpen(false)}
+                    to={title}
+                    offset={-100}
                     spy
                     smooth
-                    className={clsx(
-                      "max-lg:hidden transition-transform duration-500 cursor-pointer",
-                    )}
+                    activeClass="nav-active"
+                    className="base-bold text-foreground capitalized transition-colors duration-500 cursor-pointer hover:text-s1 max-lg:py-4 max-lg:h5 transition-all
+duration-300
+hover:scale-110"
                   >
-                    <img
-                      src="/images/xora.svg"
-                      width={160}
-                      height={55}
-                      alt="logo"
-                    />
+                    {title}
                   </LinkScroll>
                 </li>
+              ))}
+            </ul>
+          </nav>
+          {/* authenication */}
+          <div className="flex flex-col lg:flex-row gap-4">
+            <button onClick={() => navigate("/sign-in")} className="nav-li">
+              Sign In
+            </button>
 
-                <li className="nav-li">
-                  <NavLink title="faq" />
-                  <div className="dot" />
-                  <NavLink title="download" />
-                </li>
-              </ul>
-            </nav>
-
-            <div className="lg:hidden block absolute top-1/2 left-0 w-960 h-95 -translate-x-72.5 -translate-y-1/2 rotate-90">
-              <img
-                src="/images/bg-outlines.svg"
-                width={960}
-                height={380}
-                alt="outline"
-                className="relative z-2"
-              />
-              <img
-                src="/images/bg-outlines-fill.png"
-                width={960}
-                height={380}
-                alt="outline"
-                className="absolute inset-0 mix-blend-soft-light opacity-5"
-              />
-            </div>
+            <button onClick={() => navigate("/sign-up")} className="btn-primary">
+              Start for Free
+            </button>
+          </div>
+          <div className="lg:hidden block absolute top-1/2 left-0 w-960 h-95 -translate-x-72.5 -translate-y-1/2 rotate-90">
+            <img
+              src="/images/bg-outlines.svg"
+              width={960}
+              height={380}
+              alt="outline"
+              className="relative z-2"
+            />
+            <img
+              src="/images/bg-outlines-fill.png"
+              width={960}
+              height={380}
+              alt="outline"
+              className="absolute inset-0 mix-blend-soft-light opacity-5"
+            />
           </div>
         </div>
-
+      
+        </div>
+        {/* Hamburger */}
         <button
           className="lg:hidden z-2 size-10 border-2 border-s4/25 rounded-full flex justify-center items-center"
           onClick={() => setIsOpen((prevState) => !prevState)}
