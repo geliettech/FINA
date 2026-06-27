@@ -56,7 +56,7 @@
   --foreground: var(--color-p4);
 
   --card: var(--color-gray);
-  --border: var(--color-neutral);
+  --border: var(--color-s1);
   --btn: var(--color-s3);
 }
 
@@ -65,7 +65,7 @@
   --foreground: var(--color-gray);
 
   --card: var(--color-p3);
-  --border: var(--color-s4);
+  --border: var(--color-s1);
   --btn: var(--color-s3);
 }
 
@@ -107,19 +107,15 @@
   /* Box Shadows */
   --shadow-100:
     0px 4px 4px rgba(0, 0, 0, 0.25), 0px 16px 24px rgba(0, 0, 0, 0.25),
-    inset 0px 3px 6px #1959ad;
+    inset 0px 3px 6px #57b691;
 
   --shadow-200:
     0px 4px 4px rgba(0, 0, 0, 0.25), 0px 16px 24px rgba(0, 0, 0, 0.25),
-    inset 0px 4px 10px #3391ff;
+    inset 0px 4px 10px #1a5c8a;
 
-  --shadow-300:
-    0px 4px 4px rgba(0, 0, 0, 0.25), 0px 16px 24px rgba(0, 0, 0, 0.25),
-    inset 0px 3px 6px #1959ad;
+  --shadow-300: inset 0px 2px 4px 0 rgba(255, 255, 255, 0.05);
 
-  --shadow-400: inset 0px 2px 4px 0 rgba(255, 255, 255, 0.05);
-
-  --shadow-500:
+  --shadow-400:
     0px 16px 24px rgba(0, 0, 0, 0.25), 0px -14px 48px rgba(40, 51, 111, 0.7);
 
   /* Fonts */
@@ -215,7 +211,7 @@
     @apply mx-auto max-w-313 px-16 max-xl:px-10 max-lg:px-6 max-sm:px-4;
   } */
     .nav-li {
-    @apply relative flex items-center max-lg:justify-center
+    @apply flex items-center max-lg:justify-center
   }
   
   .btn-primary {
@@ -255,8 +251,9 @@
   .flex-100 {
     flex: 0 0 100%;
   }
-
+/* ==== Typography ===== */
   /* headings */
+  
   .h-num {
     @apply font-inter text-[72px] font-bold leading-21;
   }
@@ -276,9 +273,43 @@
   .h5 {
     @apply text-[32px] font-semibold leading-10;
   }
-  /* .h6 {
+  .h6 {
     @apply text-[24px] font-medium leading-9;
   }
+  .base-bold {
+    @apply text-[16px] font-bold leading-6;
+  }
+    /* .base {
+    @apply text-[16px] font-medium leading-6 tracking-[0.03em];
+  } */
+      .base {
+    @apply text-[16px] font-medium leading-6;
+  }
+    .base-small {
+    @apply text-[14px] font-semibold leading-4.5 tracking-[0.03em];
+  }
+
+
+  .small-two {
+    @apply text-[12px] font-bold leading-4 tracking-[0.3em];
+  }
+/* header */
+  /* .nav-logo {
+    @apply relative flex flex-1 items-center justify-center z-20 cursor-pointer ;
+  } */
+
+  /* .dot {
+    @apply size-1.5 rounded-full bg-p2 max-lg:hidden;
+  } */
+    .nav-active {
+    @apply transition-all duration-500 scale-105 text-s3 max-lg:text-p1;
+  }
+  /* START of Hero */
+.hero-img_res {
+    @apply max-lg:-top-40 max-lg:left-[calc(50%-280px)] max-lg:w-290 max-md:-bottom-147.5 max-md:left-[calc(50%-390px)] max-md:top-auto;
+  } 
+
+  /* 
 
   .body-1 {
     @apply text-[22px] leading-9;
@@ -292,25 +323,16 @@
     @apply text-[16px] leading-7 tracking-[0.02em];
   }
 
-  .base {
-    @apply text-[16px] font-medium leading-6 tracking-[0.03em];
-  }
 
-  .base-bold {
-    @apply text-[16px] font-bold leading-6;
-  }
 
-  .base-small {
-    @apply text-[14px] font-semibold leading-4.5 tracking-[0.03em];
-  }
+
+
 
   .small-1 {
     @apply text-[14px] font-semibold leading-4.5 tracking-[0.03em];
   }
 
-  .small-2 {
-    @apply text-[12px] font-bold leading-4 tracking-[0.3em];
-  }
+
 
   .small-compact {
     @apply text-[12px] font-semibold leading-4.5 tracking-[0.03em];
@@ -373,31 +395,14 @@
 
   /* END of Common */
   /* START of Header */
-  /* .nav-active {
-    @apply text-p3;
-  }
-
-
-
-  .nav-logo {
-    @apply relative flex flex-1 items-center justify-center;
-  }
-
-  .dot {
-    @apply size-1.5 rounded-full bg-p2 max-lg:hidden;
-  }
+  /* 
 
   .sidebar-before {
     @apply max-lg:before:absolute max-lg:before:-right-64 max-lg:before:top-2/5 max-lg:before:h-440 max-lg:before:w-63 max-lg:before:bg-s4 max-lg:before:blur-[200px] max-lg:before:content-[''];
   } */
 
   /* END of Header */
-  /* START of Hero */
-  /* .hero-img_res {
-    @apply max-lg:-top-40 max-lg:left-[calc(50%-280px)] max-lg:w-290 max-md:-bottom-147.5 max-md:left-[calc(50%-390px)] max-md:top-auto;
-  } */
 
-  /* END of Hero */
   /*START of Custom Button*/
   /* .inner-before {
     @apply before:g7 before:absolute before:inset-0 before:opacity-0 before:transition-opacity before:duration-500 before:content-[''];
