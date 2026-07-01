@@ -1,6 +1,6 @@
 # FINA - AI Finance Management App
 
-A modern SaaS AI finance management application that helps users track income, expenses, savings, investments, budgets and receive financial advice based on their financial data.
+A modern SaaS application that helps users track income, expenses, savings, investments, budgets and receive financial advice based on their financial data.
 
 ---
 
