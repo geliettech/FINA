@@ -12,10 +12,10 @@ A modern SaaS application that helps users track income, expenses, savings, inve
 - PWA
 
 ## UI & Styling
-Tailwind CSS
-shadcn/ui (Radix UI Components)
-Framer-motion
-Responsive Design
+- Tailwind CSS
+- shadcn/ui (Radix UI Components)
+- Framer-motion
+- Responsive Design
 
 ## Data & State Management
 - React-hook-form
@@ -25,12 +25,12 @@ Responsive Design
 - Context API
 
 ## BaaS & Database
-Firebase
+- Firebase
 
 ## Cloud Platforms
 - Vercel
 
-## Payment
+## Subscription Payment
 - Paystack
 
 ## CI/CD Pipelines & Containerization
@@ -66,12 +66,8 @@ Firebase
 - Skeleton Loaders
 
 ## Auth & Security
-Firebase Auth
-RBAC
-Middleware
-Rating Limiting
-CSRF
-JWT/OAuth
+- Firebase Auth
+- Middleware
 
 ## Build & Dev Tools
 - npm
@@ -86,7 +82,6 @@ JWT/OAuth
 - OpenAI API
 
 ---
-
 
 # 📁 App Structure
 
@@ -136,8 +131,8 @@ src/
 
 ## Authentication Flow
 ### Protected Routes
-```
-- /dashboard
+```txt
+ /dashboard
 ```
 ### User Authentication
 - Register
@@ -204,7 +199,9 @@ src/
 - Search
   - Search Transactions
 - Transaction History Table
-  | Date | Description | Category| Type | Amount | Actions(edit/delete) |
+```txt
+| Date | Description | Category| Type | Amount | Actions(edit/delete) |
+```
 
 #### Budgets
 - Budget Creation
@@ -223,9 +220,13 @@ src/
 #### Recurring
 - Create upcoming Recurring Transaction
 - Active Recurring Table
-  | Date | Description | Category | Type | Amount | Frequency
+```txt
+  | Date | Description | Category | Type | Amount | Frequency |
+```
 - Upcoming Recurring cards
-  | Date | Description | Category | Type | Amount | Frequency | action(pause/resume, delete) |
+```txt
+| Date | Description | Category | Type | Amount | Frequency | action(pause/resume, delete) |
+```
 
 #### Analytics
 - Filters
@@ -315,20 +316,20 @@ src/
 
 ---
 
-# 🔒 Production Check
-[] Security Check
-[] Production environment variables configured
-[] Sentry configured
-[] Authentication tested
-[] Subscription tested
-[] Lighthouse score above 90
-[] Mobile responsiveness verified
-[] Firebase Security Rules
-[] Protected Routes
-[] Logout From All Devices
-[] DarkMode setting
-[] Financial Advicer tested
-[] Components tested: Income, Transactions Creation, Budget Creation, reports Generation tested
+# 🚀 Production Check
+* [] Security Check
+* [] Production environment variables configured
+* [] Sentry configured
+* [] Authentication tested
+* [] Subscription tested
+* [] Lighthouse score above 90
+* [] Mobile responsiveness verified
+* [] Firebase Security Rules
+* [] Protected Routes
+* [] Logout From All Devices
+* [] DarkMode setting
+* [] Financial Advicer tested
+* [] Components tested: Income, Transactions Creation, Budget Creation, reports Generation tested
 
 ---
 
