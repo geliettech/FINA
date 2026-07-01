@@ -317,19 +317,19 @@ src/
 ---
 
 # 🚀 Production Check
-* [] Security Check
-* [] Production environment variables configured
-* [] Sentry configured
-* [] Authentication tested
-* [] Subscription tested
-* [] Lighthouse score above 90
-* [] Mobile responsiveness verified
-* [] Firebase Security Rules
-* [] Protected Routes
-* [] Logout From All Devices
-* [] DarkMode setting
-* [] Financial Advicer tested
-* [] Components tested: Income, Transactions Creation, Budget Creation, reports Generation tested
+* [ ] Security Check
+* [ ] Production environment variables configured
+* [ ] Sentry configured
+* [ ] Authentication tested
+* [ ] Subscription tested
+* [ ] Lighthouse score above 90
+* [ ] Mobile responsiveness verified
+* [ ] Firebase Security Rules
+* [ ] Protected Routes
+* [ ] Logout From All Devices
+* [ ] Settings tested
+* [ ] Financial Advicer tested
+* [ ] Components tested: Income, Transactions Creation, Budget Creation, reports Generation tested
 
 ---
 
