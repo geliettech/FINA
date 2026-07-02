@@ -1,7 +1,7 @@
 import { useState } from "react"
 import { useAddTransactions } from "../../hooks/useAddTransactions"
 import { useGetTransactions } from "../../hooks/useGetTransactions"
-import { useAuth } from "../../Layout/context/authProvider";
+import { useAuth } from "../../layout/context/authProvider";
 import { useNavigate } from "react-router";
 
 

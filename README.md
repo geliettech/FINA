@@ -76,7 +76,6 @@ A modern SaaS application that helps users track income, expenses, savings, inve
 - Vscode
 - GitHub copilot
 - Chatgpt
-- Antigravity IDE
 
 ## AI Integration
 - OpenAI API
@@ -328,13 +327,13 @@ src/
 * [ ] Protected Routes
 * [ ] Logout From All Devices
 * [ ] Settings tested
-* [ ] Financial Advicer tested
+* [ ] Financial Advisor tested
 * [ ] Components tested: Income, Transactions Creation, Budget Creation, reports Generation tested
 
 ---
 
 # 🎯 Project Goal
 
-FINTRA helps users understand their financial health, manage spending, track savings, monitor investments, create budgets, receive Finance Advicer, and make smarter financial decisions through a secure and scalable SaaS platform.
+Fina helps users understand their financial health, manage spending, track savings, monitor investments, create budgets, receive Finance Advice, and make smarter financial decisions through a secure and scalable SaaS platform.
 
 ---
